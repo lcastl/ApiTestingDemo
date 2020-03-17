@@ -2,6 +2,7 @@ package base;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
+import utils.LogMessages;
 import utils.WebServicesConsumer;
 import java.io.FileReader;
 import java.util.HashMap;
@@ -39,5 +40,6 @@ public class ApiController extends WebServicesConsumer {
     }
     public void callError(String key, String message) {
         Assert.fail(String.format(ERROR_JSON_PATH,key,message));
+        LogMessages.setError(message);
     }
 }

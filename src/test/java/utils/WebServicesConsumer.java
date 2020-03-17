@@ -24,9 +24,10 @@ public class WebServicesConsumer {
     public String endpoint;
     private JsonObject requestBody = new JsonObject();
     private JsonArray requestBodyArray = new JsonArray();
-
+    LogMessages logger = new LogMessages();
     public void setEndpoint(String proendpoint) {
         this.endpoint = proendpoint;
+        logger.setEndPoint(endpoint);
         //this.endpoint = ManagementPropertiesFiles.getFieldProperties("endpointmaster") + ManagementPropertiesFiles.getFieldProperties(proendpoint);
     }
 
@@ -44,10 +45,12 @@ public class WebServicesConsumer {
 
     public void setHeader(String tag, Object value) {
         request.header(tag, value);
+        logger.setHeaders(tag, value.toString());
     }
 
     public void consumeRestGet() {
         response = request.when().get(endpoint);
+        logger.setRequestGet();
     }
 
     public void consumeRestPost() {
@@ -58,7 +61,9 @@ public class WebServicesConsumer {
             request.body(requestBodyArray.toString());
             System.out.println(requestBodyArray.toString());
         }
+        logger.setBody(requestBody.toString());
         response = request.when().post(endpoint);
+        logger.setRequestPost();
     }
 
     public void consumeFreeRestPost(String body) {
@@ -85,8 +90,9 @@ public class WebServicesConsumer {
     }
 
     public void obtainResponse() {
-        response.prettyPrint();
+        //response.prettyPrint();
         json = response.then();
+        logger.setResponse(response.asString());
     }
 
     public void setBodyToPostString(String tag, Object value) {
@@ -133,8 +139,11 @@ public class WebServicesConsumer {
     public void responseStatusShouldBe(int status) {
         try {
             json.assertThat().statusCode(status);
+            logger.setStatus(status);
         } catch (Exception e) {
-            Assert.fail("El estado respuesta del servicio no fue el esperado se esperaba " + status);
+            Assert.fail("the status response wasn't expected " + status);
+            logger.setStatus(status, "ERROR");
+
         }
     }
 
