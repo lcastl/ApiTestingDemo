@@ -1,17 +1,18 @@
 package testcases;
 
+import base.TestLogger;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class GetTest {
+public class GetTest extends TestLogger {
 
     @Test
     public void getWeatherDetails() {
+        testOnStart();
         RestAssured.baseURI = "http://restapi.demoqa.com/utilities/weather/city";
 
         RequestSpecification httpRequest = RestAssured.given();
@@ -23,10 +24,11 @@ public class GetTest {
 
         int statusCode = response.getStatusCode();
         System.out.println("Status code is: " + statusCode);
-        assertEquals(statusCode, 200);
+        Assertions.assertEquals(statusCode, 200);
 
         String statusLine = response.getStatusLine();
         System.out.println("status line is: " + statusLine);
-        assertEquals(statusLine, "HTTP/1.1 200 OK");
+        Assertions.assertEquals(statusLine, "HTTP/1.1 200 OK");
+        testResultOnPass();
     }
 }

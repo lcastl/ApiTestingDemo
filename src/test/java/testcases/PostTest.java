@@ -1,18 +1,20 @@
 package testcases;
 
+import base.TestLogger;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class PostTest {
+public class PostTest extends TestLogger {
 
     @Test
     public void userRegistration() {
+
+        testOnStart();
         RestAssured.baseURI = "http://restapi.demoqa.com/customer";
 
         RequestSpecification httpRequest = RestAssured.given();
@@ -37,6 +39,7 @@ public class PostTest {
 
         String successCode = response.jsonPath().get("SuccessCode");
         System.out.println("success code is: " + successCode);
-        assertEquals(successCode, "OPERATION_SUCCESS");
+        Assertions.assertEquals(successCode, "OPERATION_SUCCESS");
+        testResultOnFail();
     }
 }
