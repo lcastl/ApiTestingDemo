@@ -2,7 +2,6 @@
 .DS_Store
 .idea
 *.iml
-report/
 target/
 pom.xml.tag
 pom.xml.releaseBackup
