@@ -3,7 +3,7 @@ import java.util.Date;
 
 public class LogMessages{
     static Date date = new Date();
-    private String endPoint =  date.toString() + " Enpoint initialized: >>>>>>>> %s <<<<<<<< \n";
+    private String endPoint =  date.toString() + " Endpoint initialized: >>>>>>>> %s <<<<<<<< \n";
     private String body =  date.toString() + " Body added %s ";
     private String headers =  date.toString() + " Header added with tag: %s and value: %s ";
     private String status =  date.toString() + " the status obtained was: %s ";

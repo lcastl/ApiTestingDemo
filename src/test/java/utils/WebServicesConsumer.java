@@ -23,8 +23,8 @@ public class WebServicesConsumer {
     private JsonObject requestBody = new JsonObject();
     private JsonArray requestBodyArray = new JsonArray();
     LogMessages logger = new LogMessages();
-    public void setEndpoint(String proendpoint) {
-        this.endpoint = proendpoint;
+    public void setEndpoint(String proEndPoint) {
+        this.endpoint = proEndPoint;
         logger.setEndPoint(endpoint);
     }
 
@@ -118,7 +118,7 @@ public class WebServicesConsumer {
         requestBody.add(tag, value);
     }
 
-    public void setFormDatatoPostString(String tag, String value) {
+    public void setFormatDataToPostString(String tag, String value) {
         request.multiPart(tag, value);
     }
 
@@ -173,6 +173,4 @@ public class WebServicesConsumer {
     public void arrayEntryCount(Map.Entry<String, String> field) {
         json.body(field.getKey() + ".size()", equalTo(Integer.parseInt(field.getValue())));
     }
-
-
 }
