@@ -1,18 +1,26 @@
 package testcases;
 
-import io.restassured.RestAssured;
-import io.restassured.http.Method;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import org.json.simple.JSONObject;
+import base.ApiController;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PostTest {
 
     @Test
     public void userRegistration() {
+        ApiController dispacher = new ApiController();
+
+        dispacher.setEndpoint("http://restapi.demoqa.com/customer/register");
+        dispacher.setHeader("Content-type", "application/json; charset=UTF-8");
+        dispacher.setBodyToPostString("FirstName", "usuario");
+        dispacher.setBodyToPostString("LastName", "usuario");
+        dispacher.setBodyToPostString("UserName", "usercorreo9909");
+        dispacher.setBodyToPostString("Password", "user2223");
+        dispacher.setBodyToPostString("Email", "correo9909@correo.com");
+        dispacher.consumeRestPost();
+        dispacher.obtainResponse();
+        dispacher.responseStatusShouldBe(201);
+        dispacher.singleEntryMapString();
+        /*
         RestAssured.baseURI = "http://restapi.demoqa.com/customer";
 
         RequestSpecification httpRequest = RestAssured.given();
@@ -20,9 +28,9 @@ public class PostTest {
         JSONObject requestParams = new JSONObject();
         requestParams.put("FirstName", "Luiss");
         requestParams.put("LastName", "Castellanoss");
-        requestParams.put("UserName", "lcastellanoss");
+        requestParams.put("UserName", "lcastellanoss1");
         requestParams.put("Password", "lcastellxcvb");
-        requestParams.put("Email", "lcastellanosas@hotmail.com");
+        requestParams.put("Email", "lcastellanosas1@hotmail.com");
 
         httpRequest.header("Content-Type", "application/json");
         httpRequest.body(requestParams.toJSONString());
@@ -38,5 +46,7 @@ public class PostTest {
         String successCode = response.jsonPath().get("SuccessCode");
         System.out.println("success code is: " + successCode);
         assertEquals(successCode, "OPERATION_SUCCESS");
+
+         */
     }
 }
