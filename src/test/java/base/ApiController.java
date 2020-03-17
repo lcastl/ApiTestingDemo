@@ -39,7 +39,7 @@ public class ApiController extends WebServicesConsumer {
 
     }
     public void callError(String key, String message) {
-        Assert.fail(String.format(ERROR_JSON_PATH,key,message));
         LogMessages.setError(message);
+        Assert.fail(String.format(ERROR_JSON_PATH,key,message));
     }
 }
