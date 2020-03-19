@@ -3,10 +3,9 @@ package base;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
 import java.io.File;
 
 public class TestLogger {
@@ -15,7 +14,7 @@ public class TestLogger {
     public static ExtentReports extentReports;
     public boolean status;
 
-    @BeforeEach
+    @Before
     public void startReport(){
         extentReports = new ExtentReports (System.getProperty("user.dir") +"/reports/suiteReport.html", true);
         extentReports
@@ -37,15 +36,17 @@ public class TestLogger {
         testLogger.log(LogStatus.FAIL, "Test Case Failed");
     }
 
-    @AfterEach
+    @After
     public void endReport() {
         extentReports.endTest(testLogger);
-    }
-
-    @AfterAll
-    public static void closeReport() {
         extentReports.flush();
         extentReports.close();
     }
+
+    /*@AfterClass
+    public static void closeReport() {
+        extentReports.flush();
+        extentReports.close();
+    }*/
 }
 

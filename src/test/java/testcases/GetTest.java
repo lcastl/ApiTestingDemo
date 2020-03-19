@@ -2,7 +2,7 @@ package testcases;
 
 import base.TestLogger;
 import base.ApiController;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class GetTest extends TestLogger {
 

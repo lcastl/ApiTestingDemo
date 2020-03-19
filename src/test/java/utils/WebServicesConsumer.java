@@ -23,6 +23,7 @@ public class WebServicesConsumer {
     private JsonObject requestBody = new JsonObject();
     private JsonArray requestBodyArray = new JsonArray();
     LogMessages logger = new LogMessages();
+
     public void setEndpoint(String proEndPoint) {
         this.endpoint = proEndPoint;
         logger.setEndPoint(endpoint);
@@ -141,7 +142,6 @@ public class WebServicesConsumer {
         } catch (Exception e) {
             Assert.fail("the status response wasn't expected " + status);
             logger.setStatus(status, "ERROR");
-
         }
     }
 
