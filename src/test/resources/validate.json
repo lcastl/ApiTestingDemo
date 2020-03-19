@@ -1,11 +1,4 @@
-{
-  "Success":{
+ {
     "SuccessCode": "OPERATION_SUCCESS",
     "Message": "Operation completed successfully"
-  },
-
-  "NoSuccess":{
-    "SuccessCode1": "OPERATION_SUCCESS",
-    "Message1": "Operation completed successfully"
   }
-}
