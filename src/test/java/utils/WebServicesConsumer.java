@@ -27,7 +27,6 @@ public class WebServicesConsumer {
     public void setEndpoint(String proEndPoint) {
         this.endpoint = proEndPoint;
         logger.setEndPoint(endpoint);
-        //this.endpoint = ManagementPropertiesFiles.getFieldProperties("endpointmaster") + ManagementPropertiesFiles.getFieldProperties(proendpoint);
     }
 
     public void setParams(String tag, Object value) {

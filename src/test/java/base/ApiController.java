@@ -17,9 +17,10 @@ public class ApiController extends WebServicesConsumer {
         Map<String, String> map = new HashMap<>();
         try (FileReader reader = new FileReader("src\\test\\resources\\validate.json")){
             map = mapper.readValue(reader , Map.class);
+
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }/*
         Map<String, String> filteredMap =
                 map.entrySet()
                         .stream()
@@ -28,9 +29,9 @@ public class ApiController extends WebServicesConsumer {
                                 Map.Entry::getValue)
                         );
         System.out.println(filteredMap);
-        for (Map.Entry<String, String> field : filteredMap.entrySet()) {
+        */
+        for (Map.Entry<String, String> field : map.entrySet()) {
             try {
-               // System.out.println(field.getKey());
                 singleEntryContainsString(field);
             } catch (AssertionError e) {
                 callError(field.getKey(), e.getMessage());
@@ -39,7 +40,7 @@ public class ApiController extends WebServicesConsumer {
     }
 
     public void callError(String key, String message) {
-        Assert.fail(String.format(ERROR_JSON_PATH,key,message));
         LogMessages.setError(message);
+        Assert.fail(String.format(ERROR_JSON_PATH,key,message));
     }
 }
