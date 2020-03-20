@@ -6,27 +6,27 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utils.WebServicesConsumer;
 
-public class PostTest extends WebServicesConsumer {
+public class PostTest {
 
     ApiController dispatcher = new ApiController();
 
     @BeforeClass
     public void userRegistration() throws InterruptedException {
-        logger.onTestStart("TC02");
-        setEndpoint("endPointPost");
-        setHeader("Content-type", "application/json; charset=UTF-8");
-        setBodyToPostString("FirstName", "usuario");
-        setBodyToPostString("LastName", "usuario");
-        setBodyToPostString("UserName", "usercorreo9919");
-        setBodyToPostString("Password", "user2223");
-        setBodyToPostString("Email", "correo9919@correo.com");
-        consumeRestPost();
-        obtainResponse();
+        dispatcher.logger.onTestStart("TC02");
+        dispatcher.setEndpoint("endPointPost");
+        dispatcher.setHeader("Content-type", "application/json; charset=UTF-8");
+        dispatcher.setBodyToPostString("FirstName", "usuario");
+        dispatcher.setBodyToPostString("LastName", "usuario");
+        dispatcher.setBodyToPostString("UserName", "usercorreo9979");
+        dispatcher.setBodyToPostString("Password", "user2223");
+        dispatcher.setBodyToPostString("Email", "correo9979@correo.com");
+        dispatcher.consumeRestPost();
+        dispatcher.obtainResponse();
     }
 
     @Test
     public void validateStatusCode() {
-        responseStatusShouldBe(201);
+        dispatcher.responseStatusShouldBe(201);
         dispatcher.singleEntryMapString("postResponse");
     }
     @Test
@@ -36,6 +36,6 @@ public class PostTest extends WebServicesConsumer {
 
     @AfterClass
     public void tearDown() {
-        logger.onTestFinish("TC02");
+        dispatcher.logger.onTestFinish("TC02");
     }
 }
