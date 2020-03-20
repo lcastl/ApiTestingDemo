@@ -16,17 +16,17 @@ public class Listeners extends TestListenerAdapter {
     public ExtentTest extentTest;
 
     public void onStart(ITestContext testContext) {
-        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/reports/myReport.html");
+        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/reports/suiteReport.html");
         htmlReporter.config().setDocumentTitle("Automation Report");
-        htmlReporter.config().setReportName("Rest API Testing Report");
+        htmlReporter.config().setReportName("API Testing Rest Assured Report");
         htmlReporter.config().setTheme(Theme.DARK);
 
         extentReports = new ExtentReports();
         extentReports.attachReporter(htmlReporter);
-        extentReports.setSystemInfo("Project name", "Employee Database API");
+        extentReports.setSystemInfo("Project name", "Smile Builder");
         extentReports.setSystemInfo("Host name", "localhost");
-        extentReports.setSystemInfo("Environment", "QA");
-        extentReports.setSystemInfo("user", "Luis Castellanos");
+        extentReports.setSystemInfo("Environment", "SQA");
+        extentReports.setSystemInfo("user", "lui.castellanos");
     }
 
     public void onTestSuccess(ITestResult result) {

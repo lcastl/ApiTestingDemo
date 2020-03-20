@@ -3,11 +3,21 @@ import java.util.Date;
 
 public class LogMessages{
     static Date date = new Date();
-    private String endPoint =  date.toString() + " Endpoint initialized: >>>>>>>> %s <<<<<<<< \n";
-    private String body =  date.toString() + " Body added %s ";
-    private String headers =  date.toString() + " Header added with tag: %s and value: %s ";
-    private String status =  date.toString() + " the status obtained was: %s ";
-    private String response =  date.toString() + " response obtained was: %s ";
+    private final String endPoint =  date.toString() + " Endpoint initialized: >>>>>>>> %s <<<<<<<< \n";
+    private final String body =  date.toString() + " Body added %s ";
+    private final String headers =  date.toString() + " Header added with tag: %s and value: %s ";
+    private final String status =  date.toString() + " the status obtained was: %s ";
+    private final String response =  date.toString() + " response obtained was: %s ";
+    private final String testStart =  date.toString() + " Test Case started ";
+    private final String testFinish =  date.toString() + " Test Case finished ";
+
+    public void onTestStart(String testCase) {
+        Log.writeLog(String.format(testStart, testCase), "FINE");
+    }
+
+    public void onTestFinish(String testCase) {
+        Log.writeLog(String.format(testFinish, testCase), "FINE");
+    }
 
     public void setEndPoint(String endPoint){
         Log.writeLog(String.format(this.endPoint, endPoint), "FINE");
