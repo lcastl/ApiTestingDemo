@@ -138,9 +138,8 @@ public class WebServicesConsumer {
             json.assertThat().statusCode(status);
             logger.setStatus(status);
         } catch (Exception e) {
-            Assert.fail("the status response wasn't expected " + status);
             logger.setStatus(status, "ERROR");
-
+            Assert.fail("the status response wasn't expected " + status);
         }
     }
 

@@ -7,7 +7,6 @@ import utils.WebServicesConsumer;
 import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class ApiController extends WebServicesConsumer {
     String ERROR_JSON_PATH = "Error Json doesn't match, value expected was %s but the obtained was %s";
