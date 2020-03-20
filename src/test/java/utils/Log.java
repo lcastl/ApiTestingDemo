@@ -26,14 +26,12 @@ public class Log {
 
     public static String dateVerify(){
         date = dateWorks("yyyy-MM-dd HH:mm:ss" , 0);
-
         i++;
         date = date.replace(" ", "");
         date = date.replace(":", "-");
         if (i == 1){
             dateUnique = date;
         }
-
         return dateUnique;
     }
 

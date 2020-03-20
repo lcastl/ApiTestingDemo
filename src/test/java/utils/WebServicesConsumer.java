@@ -16,13 +16,14 @@ import static org.hamcrest.Matchers.*;
 
 public class WebServicesConsumer {
 
-    private Response response;
-    private ValidatableResponse json;
-    private RequestSpecification request = given();
+    public Response response;
+    public ValidatableResponse json;
+    public RequestSpecification request = given();
     public String endpoint;
-    private JsonObject requestBody = new JsonObject();
-    private JsonArray requestBodyArray = new JsonArray();
-    LogMessages logger = new LogMessages();
+    public JsonObject requestBody = new JsonObject();
+    public JsonArray requestBodyArray = new JsonArray();
+    public LogMessages logger = new LogMessages();
+
     public void setEndpoint(String proEndPoint) {
         this.endpoint = ManagementPropertiesFiles.getFieldProperties(proEndPoint);
         logger.setEndPoint(endpoint);
@@ -87,7 +88,6 @@ public class WebServicesConsumer {
     }
 
     public void obtainResponse() {
-        //response.prettyPrint();
         json = response.then();
         logger.setResponse(response.asString());
     }

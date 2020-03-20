@@ -1,10 +1,15 @@
 package runners;
 
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.platform.suite.api.SelectPackages;
-import org.junit.runner.RunWith;
 
-@RunWith(JUnitPlatform.class)
-@SelectPackages("testcases")
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import testcases.GetTest;
+import testcases.PostTest;
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+        GetTest.class,
+        PostTest.class
+})
 public class TestSuite {
 }

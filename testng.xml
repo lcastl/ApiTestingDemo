@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RestAssuredSuite">
+    <listeners>
+        <listener class-name="utils.Listeners"/>
+    </listeners>
+    <test thread-count="2" name="RestAssuredTests" >
+        <classes>
+            <class name="testcases.GetTest"/>
+            <class name="testcases.PostTest"/>
+        </classes>
+    </test>
+</suite>
