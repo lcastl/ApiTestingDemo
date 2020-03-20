@@ -10,7 +10,7 @@ public class GetTest extends TestLogger {
     public void getWeatherDetails() {
         testOnStart();
         ApiController dispatcher = new ApiController();
-        dispatcher.setEndpoint("http://restapi.demoqa.com/utilities/weather/city/Medellin");
+        dispatcher.setEndpoint("endPointGet");
         dispatcher.consumeRestGet();
         dispatcher.obtainResponse();
         dispatcher.responseStatusShouldBe(200);

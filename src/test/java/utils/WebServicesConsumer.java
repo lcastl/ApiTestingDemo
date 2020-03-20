@@ -24,7 +24,7 @@ public class WebServicesConsumer {
     private JsonArray requestBodyArray = new JsonArray();
     LogMessages logger = new LogMessages();
     public void setEndpoint(String proEndPoint) {
-        this.endpoint = proEndPoint;
+        this.endpoint = ManagementPropertiesFiles.getFieldProperties(proEndPoint);
         logger.setEndPoint(endpoint);
     }
 

@@ -3,6 +3,7 @@ package base;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
 import utils.LogMessages;
+import utils.ManagementPropertiesFiles;
 import utils.WebServicesConsumer;
 import java.io.FileReader;
 import java.util.HashMap;
@@ -11,10 +12,10 @@ import java.util.Map;
 public class ApiController extends WebServicesConsumer {
     String ERROR_JSON_PATH = "Error Json doesn't match, value expected was %s but the obtained was %s";
 
-    public void singleEntryMapString() {
+    public void singleEntryMapString(String path) {
         ObjectMapper mapper = new ObjectMapper();
         Map<String, String> map = new HashMap<>();
-        try (FileReader reader = new FileReader("src\\test\\resources\\validate.json")){
+        try (FileReader reader = new FileReader(ManagementPropertiesFiles.getFieldProperties(path))){
             map = mapper.readValue(reader , Map.class);
 
         } catch (Exception e) {

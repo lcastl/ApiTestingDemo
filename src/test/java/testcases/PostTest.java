@@ -10,7 +10,7 @@ public class PostTest extends TestLogger {
     public void userRegistration() {
         ApiController dispatcher = new ApiController();
 
-        dispatcher.setEndpoint("http://restapi.demoqa.com/customer/register");
+        dispatcher.setEndpoint("endPointPost");
         dispatcher.setHeader("Content-type", "application/json; charset=UTF-8");
         dispatcher.setBodyToPostString("FirstName", "usuario");
         dispatcher.setBodyToPostString("LastName", "usuario");
@@ -20,7 +20,7 @@ public class PostTest extends TestLogger {
         dispatcher.consumeRestPost();
         dispatcher.obtainResponse();
         dispatcher.responseStatusShouldBe(201);
-        dispatcher.singleEntryMapString();
+        dispatcher.singleEntryMapString("postResponse");
         testResultOnFail();
     }
 }
