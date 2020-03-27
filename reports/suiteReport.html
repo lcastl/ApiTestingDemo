@@ -52,7 +52,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Mar 20, 2020 02:39:02 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Mar 27, 2020 11:02:46 AM</span>
 			</a>
 		</ul>
 	</div>
@@ -68,6 +68,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -110,10 +111,10 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>4</span> test(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='50%'><span class='strong'>2</span> test(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
+                    <span class='strong tooltipped' data-position='top' data-tooltip='50%'>2</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> skipped
                 </div>
             </div>
         </div>
@@ -134,13 +135,48 @@
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>validateResponseBodySingleParam</span>
-						<span class='test-time'>Mar 20, 2020 02:39:04 PM</span>
+						<span class='test-time'>Mar 27, 2020 11:02:50 AM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Mar 20, 2020 02:39:04 PM</span>
-	<span class='label end-time'>Mar 20, 2020 02:39:04 PM</span>
+	<span class='label start-time'>Mar 27, 2020 11:02:50 AM</span>
+	<span class='label end-time'>Mar 27, 2020 11:02:50 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+2ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>11:02:50 AM</td>
+				<td class='step-details'>
+						Test case PASSED IS validateResponseBodySingleParam
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>validateStatusCode</span>
+						<span class='test-time'>Mar 27, 2020 11:02:50 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 27, 2020 11:02:50 AM</span>
+	<span class='label end-time'>Mar 27, 2020 11:02:50 AM</span>
 	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+1ms</span>
 </div>
 <div class='test-steps'>
@@ -155,42 +191,7 @@
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:39:04 PM</td>
-				<td class='step-details'>
-						Test case PASSED IS validateResponseBodySingleParam
-					
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
-					<div class='test-heading'>
-						<span class='test-name'>validateStatusCode</span>
-						<span class='test-time'>Mar 20, 2020 02:39:04 PM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Mar 20, 2020 02:39:04 PM</span>
-	<span class='label end-time'>Mar 20, 2020 02:39:04 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-<div class='test-steps'>
-	<table class='bordered table-results'>
-		<thead>
-			<tr>
-				<th>Status</th>
-				<th>Timestamp</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:39:04 PM</td>
+				<td class='timestamp'>11:02:50 AM</td>
 				<td class='step-details'>
 						Test case PASSED IS validateStatusCode
 					
@@ -201,17 +202,17 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='3'>
 					<div class='test-heading'>
 						<span class='test-name'>validateResponseBodySingleParam</span>
-						<span class='test-time'>Mar 20, 2020 02:39:06 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Mar 27, 2020 11:02:52 AM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Mar 20, 2020 02:39:06 PM</span>
-	<span class='label end-time'>Mar 20, 2020 02:39:06 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+	<span class='label start-time'>Mar 27, 2020 11:02:52 AM</span>
+	<span class='label end-time'>Mar 27, 2020 11:02:52 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+1ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -223,11 +224,22 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:39:06 PM</td>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:02:52 AM</td>
 				<td class='step-details'>
-						Test case PASSED IS validateResponseBodySingleParam
+						TEST CASE FAILED IS validateResponseBodySingleParam
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:02:52 AM</td>
+				<td class='step-details'>
+						TEST CASE FAILED IS java.lang.AssertionError: Error Json doesn't match, value expected was SuccessCode but the obtained was 1 expectation failed.
+JSON path SuccessCode doesn't match.
+Expected: OPERATION_SUCCESS
+  Actual: null
 					
 				</td>
 			</tr>
@@ -236,16 +248,16 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='4'>
 					<div class='test-heading'>
 						<span class='test-name'>validateStatusCode</span>
-						<span class='test-time'>Mar 20, 2020 02:39:06 PM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Mar 27, 2020 11:02:52 AM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Mar 20, 2020 02:39:06 PM</span>
-	<span class='label end-time'>Mar 20, 2020 02:39:06 PM</span>
+	<span class='label start-time'>Mar 27, 2020 11:02:52 AM</span>
+	<span class='label end-time'>Mar 27, 2020 11:02:52 AM</span>
 	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
 </div>
 <div class='test-steps'>
@@ -258,11 +270,20 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr class='log' status='pass'>
-				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>2:39:06 PM</td>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:02:52 AM</td>
 				<td class='step-details'>
-						Test case PASSED IS validateStatusCode
+						TEST CASE FAILED IS validateStatusCode
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>11:02:52 AM</td>
+				<td class='step-details'>
+						TEST CASE FAILED IS java.lang.AssertionError: 1 expectation failed.
+Expected status code <201> but was <200>.
 					
 				</td>
 			</tr>
@@ -311,19 +332,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Mar 20, 2020 02:39:02 PM</div>
+					<div class='panel-lead'>Mar 27, 2020 11:02:46 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Mar 20, 2020 02:39:06 PM</div>
+			 		<div class='panel-lead'>Mar 27, 2020 11:02:52 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 4s+163ms</div>
+					<div class='panel-lead'>0h 0m 6s+205ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -363,13 +384,13 @@
 		<script>
 			var statusGroup = {
                 parentCount: 4,
-				passParent: 4,
-				failParent: 0,
+				passParent: 2,
+				failParent: 2,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 2,
 				childCount: 0,
 				passChild: 0,
 				failChild: 0,
@@ -394,7 +415,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "validateResponseBodySingleParam":0.001,"validateStatusCode":0,"validateResponseBodySingleParam":0,"validateStatusCode":0
+			        "validateResponseBodySingleParam":0.002,"validateStatusCode":0.001,"validateResponseBodySingleParam":0.001,"validateStatusCode":0
 			};
 		</script>
 	

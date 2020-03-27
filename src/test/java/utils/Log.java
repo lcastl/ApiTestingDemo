@@ -16,15 +16,18 @@ public class Log {
     static Logger logger = Logger.getLogger("Test");
     static String pathFile;
 
+    private Log(){
+
+    }
+
     public static Log getInstance(){
         if (manager==null){
-            pathFile = createFile() + "\\" + dateVerify() + "TestLog.log";
             manager = new Log();
         }
         return manager;
     }
 
-    public static String dateVerify(){
+    public String dateVerify(){
         date = dateWorks("yyyy-MM-dd HH:mm:ss" , 0);
         i++;
         date = date.replace(" ", "");
@@ -35,8 +38,8 @@ public class Log {
         return dateUnique;
     }
 
-    public static void writeLog(String message, String lvl ) {
-        getInstance();
+    public void writeLog(String message, String lvl ) {
+        pathFile = createFile() + "\\" + dateVerify() + "TestLog.log";
         try {
             FileHandler fh = new FileHandler(pathFile, true);
             logger.addHandler(fh);
@@ -60,14 +63,14 @@ public class Log {
         }
     }
 
-    public static String createFile(){
+    public  String createFile(){
         String dateFile = dateWorks("yyyy-MM-dd", 0);
         String path = "target\\evidence\\logs\\" + dateFile;
         new File(path).mkdirs();
         return  path;
     }
 
-    public static String dateWorks(String formatDate, int days) {
+    public String dateWorks(String formatDate, int days) {
         SimpleDateFormat format = new SimpleDateFormat(formatDate);
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, days);

@@ -3,6 +3,7 @@ import java.util.Date;
 
 public class LogMessages{
     static Date date = new Date();
+    Log logger = Log.getInstance();
     private final String endPoint =  date.toString() + " Endpoint initialized: >>>>>>>> %s <<<<<<<< \n";
     private final String body =  date.toString() + " Body added %s ";
     private final String headers =  date.toString() + " Header added with tag: %s and value: %s ";
@@ -12,47 +13,47 @@ public class LogMessages{
     private final String testFinish =  date.toString() + " Test Case finished ";
 
     public void onTestStart(String testCase) {
-        Log.writeLog(String.format(testStart, testCase), "FINE");
+        logger.writeLog(String.format(testStart, testCase), "FINE");
     }
 
     public void onTestFinish(String testCase) {
-        Log.writeLog(String.format(testFinish, testCase), "FINE");
+        logger.writeLog(String.format(testFinish, testCase), "FINE");
     }
 
     public void setEndPoint(String endPoint){
-        Log.writeLog(String.format(this.endPoint, endPoint), "FINE");
+        logger.writeLog(String.format(this.endPoint, endPoint), "FINE");
     }
 
     public void setHeaders(String tag, String value){
-        Log.writeLog(String.format(this.headers, tag, value), "FINE");
+        logger.writeLog(String.format(this.headers, tag, value), "FINE");
     }
 
     public void setBody(String body){
-        Log.writeLog(String.format(this.body, body), "FINE");
+        logger.writeLog(String.format(this.body, body), "FINE");
     }
 
     public void setStatus(int status){
-        Log.writeLog(String.format(this.status, status), "FINE");
+        logger.writeLog(String.format(this.status, status), "FINE");
     }
 
     public void setStatus(int status, String lvl){
-        Log.writeLog(String.format(this.status, status), "FINE");
+        logger.writeLog(String.format(this.status, status), "FINE");
     }
 
     public void setResponse(String response){
-        Log.writeLog(String.format(this.response, response), "FINE");
+        logger.writeLog(String.format(this.response, response), "FINE");
     }
 
     public void setRequestGet(){
-        Log.writeLog(date.toString() + " >>>>>>>>>  Request type GET <<<<<<<<<", "FINE");
+        logger.writeLog(date.toString() + " >>>>>>>>>  Request type GET <<<<<<<<<", "FINE");
     }
 
     public void setRequestPost(){
-        Log.writeLog(date.toString() + " >>>>>>>>>  Request type POST <<<<<<<<<", "FINE");
+        logger.writeLog(date.toString() + " >>>>>>>>>  Request type POST <<<<<<<<<", "FINE");
     }
 
-    public static void setError(String message) {
+    public void setError(String message) {
         message = "########################################################## \n" + date.toString()+" "+ message + "\n";
-        Log.writeLog(message,"ERROR");
+        logger.writeLog(message,"ERROR");
     }
 }
